@@ -7,7 +7,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/info', function(req, res, next){
-  res.send("Here is a new route!");
+  
+  res.send('respond with a resource');
 });
+
+router.post('/info', function(req, res, next) {
+  res.send(req.body);
+})
 
 module.exports = router;

@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    h1= title
+    p 
+        strong Title: #{book.title}
+    p
+        strong Author: 
+            a(href=book.author.url) #{book.author.fullName}
+    p
+        strong Summary: #{book.summary}
+    p
+        strong Isbn: #{book.isbn}
+    p
+        strong Genres: 
+            each genre, index in book.genre
+                a(href=genre.url)  #{genre.name}
+                if(index < book.genre.length)
+                    | ,
+
+    h3 Book instances
+    ul
+        each bookInstance in bookInstanceList
+            hr
+            if bookInstance.status=='Available'
+                p.label.label-success #{bookInstance.status}
+            else if bookInstance.status=='Maintenance'
+                p.label.label-danger #{bookInstance.status}
+            else
+                p.label.label-warning #{bookInstance.status} 
+            p #[strong Imprint:] #{bookInstance.imprint}
+            if bookInstance.status!='Available'
+                p #[strong Due back:] #{bookInstance.due_back}
+            p #[strong Id:]&nbsp;
+                a(href=bookInstance.url) #{bookInstance._id}

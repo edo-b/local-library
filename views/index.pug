@@ -3,3 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  if error
+    p Error getting items counts !{error}
+  else
+    p Current counts of items
+    ul
+      li #[strong Books: ] #{data.bookCount}
+      li #[strong Copies: ] !{data.bookInstanceCount}
+      li #[strong Copies available: ] !{data.availableBookInstanceCount}
+      li #[strong Authors: ] !{data.authorCount}
+      li #[strong Genres: ] !{data.genreCount}

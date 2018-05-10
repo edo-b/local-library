@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= title
+    h2= genre.name
+    h3 Books
+    ul
+        each book in genreBookList
+            li
+                a(href=book.url) #{book.title}
+                p #{book.summary}

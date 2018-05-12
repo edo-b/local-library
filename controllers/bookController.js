@@ -62,7 +62,7 @@ exports.get_instance = function(req, res, next){
 };
 
 exports.get_create = function(req, res){
-    res.send('NOT IMPLEMENTED Book get create');
+    res.render('createBook', {title:"Create a new book"});
 };
 
 exports.post_create = function(req, res){

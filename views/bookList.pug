@@ -2,10 +2,10 @@ extends layout
 
 block content
     h1= title
-    ul
+    div.list-group
         each book in bookList
-            li 
-                a(href=book.url) #{book.title}
-                |  (#{book.author.fullName})
+            a(href=book.url, class="list-group-item")
+                strong= book.title
+                span  (#{book.author.fullName})
         else
-            li There are no books
+            div.list-group-item There are no books

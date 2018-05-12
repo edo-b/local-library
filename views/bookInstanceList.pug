@@ -2,10 +2,10 @@ extends layout
 
 block content
     h1= title
-    ul
+    div.list-group
         each bookInstance in bookInstanceList
-            li
-                a(href=bookInstance.url) #{bookInstance.book.title} #{bookInstance.imprint} - 
+            a(href=bookInstance.url, class="list-group-item") 
+                strong #{bookInstance.book.title} #{bookInstance.imprint} - 
                 if bookInstance.status == "Available"
                     span.label.label-success #{bookInstance.status}
                 else if bookInstance.status == "Maintenance"

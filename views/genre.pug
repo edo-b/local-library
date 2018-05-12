@@ -4,8 +4,8 @@ block content
     h1= title
     h2= genre.name
     h3 Books
-    ul
+    div.list-group
         each book in genreBookList
-            li
-                a(href=book.url) #{book.title}
-                p #{book.summary}
+            a(href=book.url, class="list-group-item") 
+                h3 #{book.title}
+                p= book.summary

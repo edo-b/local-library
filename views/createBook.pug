@@ -1,0 +1,7 @@
+extends layout
+block content
+    h1= title
+    form(method="post")
+        label(for="bookTitle") Book title:  
+         input(id="bookTitle", placeholder="Book title")
+        input(type="submit", value="Save new book")

@@ -2,7 +2,9 @@ extends layout
 
 block content
     h1= title
-    ul
-        each genre in genreList
-            li
-                a(href=genre.url) #{genre.name}
+    div.list-group
+            each genre in genreList
+                a(href=genre.url, class="list-group-item")
+                    strong= genre.name
+            else
+                div.list-group-item There are no genres

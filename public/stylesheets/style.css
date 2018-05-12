@@ -1,20 +1,39 @@
 body {
   padding: 0;
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
 
+.full-height-fixed-nav {
+  height:100vh;
+  position:fixed;
+  width:200px;
+}
+
 .dark {
   background-color: #333;
-  color: white;
+  color: #e5e5e5;
 }
 
 .sidebar-nav {
   margin-top: 20px;
   padding: 0;
   list-style: none;
+  font-size: 18px;
+}
+
+.sidebar-nav a {
+  color: #b7b7b7;
+  text-decoration: none;
+}
+.sidebar-nav a:hover {
+  color: #f4f4f4;
+}
+
+.margin-left {
+  margin-left: 200px;
 }

@@ -1,0 +1,15 @@
+extends layout
+block content
+    h1= title
+    form.form-inline(method="post")
+        div.form-group
+            label(for="genreName") Genre name: &nbsp;
+            input#genreName.form-control(placeholder="Genre name", name="name") 
+            span &nbsp;
+            input.btn.btn-info(type="submit", value="Save")
+    br
+    if errors
+        div.alert.alert-danger.col-sm-3
+            strong Error 
+            each error in errors
+                span= error.msg

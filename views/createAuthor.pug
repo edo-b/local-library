@@ -1,0 +1,25 @@
+extends layout
+block content
+
+    h1= title
+    form(method="post")
+        div.form-group
+            label(for="firstName") First name: &nbsp;
+            input#firstName.form-control(placeholder="First name", name="firstName", value=(author ? author.firstName : '' )) 
+        div.form-group
+            label(for="lastName") Last name: &nbsp;
+            input#lastName.form-control(placeholder="Last name", name="lastName", value=(author ? author.lastName : '' )) 
+        div.form-group
+            label(for="dateOfBirth") Date of birth: &nbsp;
+            input#dateOfBirth.form-control(type="date", placeholder="Date of birth", name="dateOfBirth", value=(author ? author.dateOfBirth : '' )) 
+        div.form-group
+            label(for="dateOfDeath") Date of death: &nbsp;
+            input#dateOfDeath.form-control(type="date", placeholder="Date of death", name="dateOfDeath", value=(author ? author.dateOfDeath : '' )) 
+            span &nbsp;
+        input.btn.btn-info(type="submit", value="Save")
+    br
+    if errors
+        div.alert.alert-danger.col-sm-3
+            strong Error 
+            each error in errors
+                span #{error.msg}. 

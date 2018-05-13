@@ -8,32 +8,37 @@ a {
   color: #00B7FF;
 }
 
-.full-height-fixed-nav {
-  height:100vh;
-  position:fixed;
-  width:200px;
-}
-
 .dark {
   background-color: #333;
   color: #e5e5e5;
 }
 
-.sidebar-nav {
-  margin-top: 20px;
-  padding: 0;
-  list-style: none;
-  font-size: 18px;
+.container-padding {
+  padding:30px;
 }
 
-.sidebar-nav a {
+.full-height-fixed-nav {
+  height:100vh;
+  position:fixed;
+  width:150px;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+.full-height-fixed-nav a {
+  display: block;
+  width: 100%;
+  padding: 15px 10px;
+}
+.full-height-fixed-nav a:hover {
+  background-color: #4c4c4c;
+}
+
+.full-height-fixed-nav a {
   color: #b7b7b7;
   text-decoration: none;
 }
-.sidebar-nav a:hover {
-  color: #f4f4f4;
-}
 
 .margin-left {
-  margin-left: 200px;
+  margin-left: 150px;
 }

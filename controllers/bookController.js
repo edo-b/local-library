@@ -66,6 +66,7 @@ exports.get_create = function(req, res){
 };
 
 exports.post_create = function(req, res){
+    console.log("Hit post book method");
     res.send('NOT IMPLEMENTED');
 };
 

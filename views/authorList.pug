@@ -10,3 +10,6 @@ block content
                 span  (#{author.dateOfBirthFormatted} - #{author.dateOfDeath ? author.dateOfDeathFormatted : ''})
         else
             div.list-group-item There are no authors
+    a.btn.btn-success(href="/catalog/author/create") 
+        i.fa.fa-plus-circle
+        span  Create a new author

@@ -42,3 +42,19 @@ a {
 .margin-left {
   margin-left: 150px;
 }
+
+.color1:hover{
+  color:#749da1;
+}
+.color2:hover{
+  color:#b4be89;
+}
+.color3:hover{
+  color:#E5E5A0;
+}
+.color4:hover{
+  color:#e0be99;
+}
+.color5:hover{
+  color:#eb9191;
+}

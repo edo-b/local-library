@@ -18,7 +18,7 @@ block content
         strong Genres: 
         each genre, index in book.genre
             a(href=genre.url)  #{genre.name}
-            if(index < book.genre.length)
+            if(index < book.genre.length - 1)
                 | ,
 
     h3 Book instances

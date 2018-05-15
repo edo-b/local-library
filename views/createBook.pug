@@ -2,6 +2,31 @@ extends layout
 block content
     h1= title
     form(method="post")
-        label(for="bookTitle") Book title:  
-         input(id="bookTitle", placeholder="Book title")
-        input(type="submit", value="Save new book")
+        div.form-group
+            label(for="bookTitle") Book title:  
+            input.form-control(id="bookTitle", placeholder="Book title", name="title", value=(book ? book.title : ''))
+        div.form-group
+            label(for="summary") Summary:  
+            input.form-control(id="summary", placeholder="Summary", name="summary", value=(book ? book.summary : ''))
+        div.form-group
+            label(for="isbn") ISBN:  
+            input.form-control(id="isbn", placeholder="ISBN", name="isbn", value=(book ? book.isbn : ''))
+        div.form-group
+            label(for="author") Select author
+            select.form-control#author(name="author")
+                each author in authorList
+                    option(value=author.id, selected=(book && book.author == author.id)) #{author.fullName}
+        div.form-group
+            label(for="genre") Select genre
+                each genre in genreList
+                    div(style="margin-left:10px")
+                        br
+                        input(type="checkbox", id=genre.id, name="genre", value=genre.id)
+                        label(for=genre.id, style="margin-left:5px") #{genre.name}
+        input.btn.btn-info(type="submit", value="Save new book")
+    if errors
+        br
+        div.alert.alert-danger.col-sm-3
+            strong Error! 
+            each error in errors
+                span #{error.msg}. 

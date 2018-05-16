@@ -80,8 +80,27 @@ exports.get_delete = function(req, res){
     res.send('NOT IMPLEMENTED.  Author get delete ID = ' + req.params.id);
 };
 
-exports.post_delete = function(req, res){
-    res.send('NOT IMPLEMENTED');
+exports.post_delete = function(req, res, next){
+    async.parallel({
+        author: function(callback){
+            Author.findById(req.params.id, callback);
+        },
+        authorBooks: function(callback){
+            Book.find({'author': req.params.id}, callback);
+        }
+    }, function(err, data){
+        if(err) return next(err);
+        if(!data.author || data.authorBooks.length > 0){
+            res.redirect('/catalog/authors');
+            return;
+        }
+        else{
+            data.author.remove(function(err){
+                if(err) return next(err);
+                res.redirect('/catalog/authors');
+            });
+        }
+    });
 };
 
 exports.get_update = function(req, res){

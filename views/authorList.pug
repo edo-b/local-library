@@ -8,6 +8,8 @@ block content
             a(href=author.url, class="list-group-item")
                 strong= author.fullName
                 span  (#{author.dateOfBirthFormatted} - #{author.dateOfDeath ? author.dateOfDeathFormatted : ''})
+                form.pull-right(method="post", action=author.url + "/delete")
+                    input.btn.btn-xs.btn-danger(type="submit", value="Delete")
         else
             div.list-group-item There are no authors
     a.btn.btn-success(href="/catalog/author/create") 
